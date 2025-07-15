@@ -88,10 +88,44 @@ This template implements a **4-layer architecture**:
 - **[⚙️ Setup Guide](docs/setup.md)** - Installation and configuration
 - **[💻 Development Guide](docs/development.md)** - Development workflow and best practices
 - **[🔌 API Reference](docs/api.md)** - API endpoints and usage examples
+- **[☁️ Infrastructure Guide](terraform/README.md)** - Terraform deployment and cloud infrastructure
 
-## 🛠️ Features
+## ☁️ Infrastructure as Code
+
+This template includes complete **Terraform configurations** for deploying to both **AWS** and **Google Cloud Platform**:
+
+### Quick Deploy
+```bash
+# Deploy to AWS (development)
+./terraform/scripts/deploy.sh -e dev -p aws -a apply
+
+# Deploy to GCP (production)
+./terraform/scripts/deploy.sh -e prod -p gcp -a apply
+```
+
+### Supported Cloud Providers
+- **� Amazon Web Services (AWS)**
+  - ECS Fargate + ALB + RDS
+  - Auto-scaling and load balancing
+  - CloudWatch monitoring
+  
+- **🔵 Google Cloud Platform (GCP)**
+  - Cloud Run + Cloud SQL
+  - Auto-scaling serverless deployment
+  - Cloud Monitoring integration
+
+### Switch Providers
+Simply change one variable in your configuration:
+```hcl
+cloud_provider = "aws"  # or "gcp"
+```
+
+See the **[Infrastructure Guide](terraform/README.md)** for detailed deployment instructions.
+
+## �🛠️ Features
 
 - ✅ **Clean Layered Architecture** - Well-organized, maintainable codebase
+- ✅ **Multi-Cloud Infrastructure** - Deploy to AWS or GCP with Terraform
 - ✅ **Development Container** - Ready-to-use dev environment with VS Code
 - ✅ **Go Module Support** - Modern Go dependency management
 - ✅ **Logging Framework** - Structured logging setup

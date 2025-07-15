@@ -5,9 +5,10 @@ Welcome to the Go Layered Architecture project documentation.
 ## Table of Contents
 
 - [Architecture Overview](architecture.md)
-- [API Reference](api.md)
+- [Infrastructure Guide](infrastructure.md)
 - [Setup Guide](setup.md)
 - [Development Guide](development.md)
+- [API Reference](api.md)
 
 ## Quick Start
 
